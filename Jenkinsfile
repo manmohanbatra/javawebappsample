@@ -24,8 +24,8 @@ node {
       // login Azure
       withCredentials([usernamePassword(credentialsId: 'myJenkinsSPN2000', passwordVariable: 'AZURE_CLIENT_SECRET', usernameVariable: 'AZURE_CLIENT_ID')]) {
        sh '''
-          az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
-          az account set -s $AZURE_SUBSCRIPTION_ID
+          'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'
+          'az account set -s $AZURE_SUBSCRIPTION_ID'
         '''
       }
       // get publish settings
